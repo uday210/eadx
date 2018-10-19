@@ -1,0 +1,88 @@
+{
+  "fileFormat": {
+    "charsetName": "UTF-8",
+    "fieldsDelimitedBy": ",",
+    "linesTerminatedBy": "\r\n"
+  },
+  "objects": [
+    {
+      "connector": "CSV",
+      "fields": [
+        {
+          "format": "yyyy-MM-dd",
+          "fullyQualifiedName": "Date",
+          "label": "Date",
+          "name": "Date",
+          "type": "Date"
+        },
+        {
+          "fullyQualifiedName": "Country",
+          "label": "Country",
+          "name": "Country",
+          "type": "Text"
+        },
+        {
+          "fullyQualifiedName": "Product",
+          "label": "Product",
+          "name": "Product",
+          "type": "Text"
+        },
+        {
+          "defaultValue": "0",
+          "format": "0",
+          "fullyQualifiedName": "Revenue",
+          "label": "Revenue",
+          "name": "Revenue",
+          "precision": 18,
+          "scale": 0,
+          "type": "Numeric"
+        },
+        {
+          "decimalSeparator": ".",
+          "defaultValue": "0",
+          "format": "0.##",
+          "fullyQualifiedName": "Cost",
+          "label": "Cost",
+          "name": "Cost",
+          "precision": 18,
+          "scale": 2,
+          "type": "Numeric"
+        },
+        {
+          "decimalSeparator": ".",
+          "defaultValue": "0",
+          "format": "0.##",
+          "fullyQualifiedName": "Profit",
+          "label": "Profit",
+          "name": "Profit",
+          "precision": 18,
+          "scale": 2,
+          "type": "Numeric"
+        },
+        {
+          "defaultValue": "0",
+          "format": "0",
+          "fullyQualifiedName": "Percent_Target",
+          "label": " Percent Target ",
+          "name": "Percent_Target",
+          "precision": 18,
+          "scale": 0,
+          "type": "Numeric"
+        },
+        {
+          "defaultValue": "0",
+          "format": "0",
+          "fullyQualifiedName": "Pipeline",
+          "label": "Pipeline",
+          "name": "Pipeline",
+          "precision": 18,
+          "scale": 0,
+          "type": "Numeric"
+        }
+      ],
+      "fullyQualifiedName": "DemoData1_csv",
+      "label": "DemoData1.csv",
+      "name": "DemoData1_csv"
+    }
+  ]
+}

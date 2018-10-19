@@ -1,0 +1,43 @@
+{
+  "name" : "Foo_Dashboard_tp",
+  "label" : "Foo Dashboard",
+  "folder" : {
+    "id" : "${App.Folder.Id}"
+  },
+  "state" : {
+    "dataSourceLinks" : [ ],
+    "gridLayouts" : [
+  {
+        "name" : "Default",
+        "numColumns" : 12,
+        "pages" : [
+  {
+            "widgets" : [ ]
+          }
+  ],
+        "rowHeight" : "normal",
+        "selectors" : [ ],
+        "style" : {
+          "alignmentX" : "left",
+          "alignmentY" : "top",
+          "backgroundColor" : "#F2F6FA",
+          "cellSpacingX" : 8,
+          "cellSpacingY" : 8,
+          "fit" : "original",
+          "gutterColor" : "#C5D3E0"
+        },
+        "version" : 1.0
+      }
+  ],
+    "layouts" : [ ],
+    "steps" : { },
+    "widgetStyle" : {
+      "backgroundColor" : "#FFFFFF",
+      "borderColor" : "#E6ECF2",
+      "borderEdges" : [ ],
+      "borderRadius" : 0,
+      "borderWidth" : 1
+    },
+    "widgets" : { }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "templateType" : "app",
+  "label" : "Package Test",
+  "name" : "Package_Test",
+  "namespace" : "eadx",
+  "templateIcon" : "default.png",
+  "assetIcon" : "16.png",
+  "assetVersion" : 40.0,
+  "variableDefinition" : "variables.json",
+  "uiDefinition" : "ui.json",
+  "rules" : [
+  {
+      "type" : "templateToApp",
+      "file" : "template-to-app-rules.json"
+    },
+  {
+      "type" : "appToTemplate",
+      "file" : "app-to-template-rules.json"
+    }
+  ],
+  "releaseInfo" : {
+    "templateVersion" : "1.1",
+    "notesFile" : "releaseNotes.html"
+  },
+  "folderDefinition" : "folder.json",
+  "externalFiles" : [
+  {
+      "name" : "OnTime",
+      "condition" : "${Variables.Overrides.createAllExternalFiles}",
+      "file" : "external_files/OnTime.csv",
+      "type" : "CSV",
+      "schema" : "external_files/OnTime.json",
+      "userXmd" : "external_files/OnTime_XMD.json",
+      "rows" : 5
+    }
+  ],
+  "lenses" : [ ],
+  "dashboards" : [
+  {
+      "label" : "Airline On Time",
+      "name" : "Airline_On_Time_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Airline_On_Time.json"
+    }
+  ],
+  "eltDataflows" : [ ],
+  "datasetFiles" : [ ],
+  "imageFiles" : [ ]
+}

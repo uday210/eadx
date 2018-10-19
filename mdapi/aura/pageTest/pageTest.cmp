@@ -1,0 +1,37 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="developerName" type="String" access="global" default="eadx__Page_Test"/>
+    <aura:attribute name="dashboardDef" type="Object"/>
+    <aura:attribute name="pages" type="Object[]"/>
+    <aura:attribute name="filter" type="String"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="wave:selectionChanged" action="{!c.handleSelectionChanged}"/>
+    
+    <wave:sdk aura:id="sdk"/>
+    
+    <div>
+        <lightning:layout>
+            <lightning:layoutItem size="7" flexibility="no-shrink">
+                <lightning:card title="Lightning Tabset">
+                    <lightning:tabset onselect="{!c.handleTabSelect}" class="page-tabs">
+                        <aura:iteration items="{!v.pages}" var="page">
+                            <lightning:tab label="{!page.label}" id="{!page.name}" class="tab">
+                            </lightning:tab>
+                        </aura:iteration>
+                    </lightning:tabset>                
+                </lightning:card>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="5" flexibility="no-shrink">
+                
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout>
+            <lightning:layoutItem size="12" flexibility="no-shrink" class="slds-m-top_small">
+                <lightning:card title="Einstein Analytics Dashboard">
+                    <wave:waveDashboard developerName="{!v.developerName}" height="600" showHeader="false" showTitle="false" showSharing="false"/>
+                </lightning:card>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+    
+</aura:component>

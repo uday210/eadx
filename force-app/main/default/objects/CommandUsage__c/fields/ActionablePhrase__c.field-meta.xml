@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ActionablePhrase__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Actionable Phrase</label>
+    <referenceTo>ActionablePhrase__c</referenceTo>
+    <relationshipLabel>Command Usages</relationshipLabel>
+    <relationshipName>PhraseUsages</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

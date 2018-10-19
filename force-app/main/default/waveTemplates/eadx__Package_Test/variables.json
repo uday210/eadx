@@ -1,0 +1,73 @@
+{
+  "Overrides" : {
+    "label" : "Overrides",
+    "description" : "Internal configuration to allow asset creation overrides, not to be displayed in UI.",
+    "defaultValue" : {
+      "createAllDashboards" : true,
+      "createAllLenses" : true,
+      "createAllExternalFiles" : true,
+      "createDataflow" : true,
+      "createAllDatasetFiles" : true,
+      "createAllImages" : true
+    },
+    "required" : true,
+    "excludeSelected" : false,
+    "excludes" : [ ],
+    "variableType" : {
+      "required" : [ "createAllExternalFiles", "createAllDashboards", "createAllImages", "createAllDatasetFiles", "createAllLenses", "createDataflow" ],
+      "type" : "ObjectType",
+      "properties" : {
+        "createAllDashboards" : {
+          "type" : "BooleanType",
+          "enums" : [ true, false ]
+        },
+        "createAllLenses" : {
+          "type" : "BooleanType",
+          "enums" : [ true, false ]
+        },
+        "createAllExternalFiles" : {
+          "type" : "BooleanType",
+          "enums" : [ true, false ]
+        },
+        "createDataflow" : {
+          "type" : "BooleanType",
+          "enums" : [ true, false ]
+        },
+        "createAllDatasetFiles" : {
+          "type" : "BooleanType",
+          "enums" : [ true, false ]
+        },
+        "createAllImages" : {
+          "type" : "BooleanType",
+          "enums" : [ true, false ]
+        }
+      },
+      "strictValidation" : true
+    }
+  },
+  "OpportunityMoreDims": {
+    "label": "What additional dimensions from the Opportunities object would you like to add to Wave datasets?",
+    "description": "Choose the text fields from Opportunities that you would like Wave to include in Wave datasets.",
+    "defaultValue": [
+      {
+        "sobjectName": "Opportunity",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludeSelected": true,
+    "excludes": [
+      "Name",
+      "StageName",
+      "ForecastCategory",
+      "ForecastCategoryName"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType",
+        "dataType": "xsd:string"
+      }
+    }
+  }
+}

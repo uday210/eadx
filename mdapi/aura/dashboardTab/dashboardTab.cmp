@@ -1,0 +1,36 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,lightning:isUrlAddressable" access="global" >
+    <aura:attribute name="tabId" type="String" access="GLOBAL" description="The tab ID set by the Lightning Console"/>
+    <aura:attribute name="dashboardId" type="String" access="GLOBAL" description="The id of the dashboard to show, etc." default="0FKB00000003fBpOAI"/>
+    <aura:attribute name="pageName" type="String" access="GLOBAL" description="The name of the page in the dashboard"/>
+    <aura:attribute name="datasetName" type="String" access="GLOBAL" default="eadx__oppty2" description="Dataset used for refresh"/>
+    <aura:attribute name="fieldName" type="String" access="GLOBAL" default="StageName" description="Field in the dataset used for refresh"/>
+    <aura:attribute name="fieldValue" type="String" access="GLOBAL" default="Needs Analysis" description="Value for the field in the dataset used for refresh"/>
+        
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:handler name="change" value="{!v.pageReference.state.dashboardId}" action="{!c.showDashboard}"/>
+    <aura:handler name="change" value="{!v.pageReference.state.pageName}" action="{!c.showDashboard}"/>
+    
+	<aura:handler event="c:showDashboard" action="{!c.showDashboard}"/>
+        
+	<aura:handler event="lightning:tabCreated" action="{!c.onTabCreated}"/>
+    <aura:handler event="lightning:tabFocused" action="{!c.onTabFocused}"/>
+	<aura:handler event="lightning:tabRefreshed" action="{!c.onTabRefreshed}"/>
+	<aura:handler event="lightning:tabUpdated" action="{!c.onTabUpdated}"/>
+    
+    <aura:registerEvent name="update" type="wave:update"/>
+    
+	<lightning:workspaceAPI aura:id="workspace"/>
+    <wave:sdk aura:id="sdk"/>
+    
+    <section class="outer-container" aura:id="outer_container">
+        <div class="slds-grid slds-wrap slds-grid--pull-padded">
+            <div class="slds-p-right--small slds-p-left--xx-small slds-size--2-of-2 slds-medium-size--6-of-6 slds-large-size--12-of-12">
+                <div class="dashboard-outer" aura:id="dashboard-outer">
+                    <div aura:id="dashboard" class="dashboard-container">        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>	
+</aura:component>

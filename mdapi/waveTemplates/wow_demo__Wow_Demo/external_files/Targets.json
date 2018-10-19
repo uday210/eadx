@@ -1,0 +1,207 @@
+{
+  "fileFormat": {
+    "charsetName": "UTF-8",
+    "fieldsDelimitedBy": ",",
+    "fieldsEnclosedBy": "\"",
+    "linesTerminatedBy": "\r\n"
+  },
+  "objects": [
+    {
+      "connector": "CSV",
+      "fullyQualifiedName": "Targets_csv",
+      "label": "Targets.csv",
+      "name": "Targets_csv",
+      "fields": [
+        {
+          "fullyQualifiedName": "Region",
+          "name": "Region",
+          "type": "Numeric",
+          "label": "Region",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 0,
+          "format": "0"
+        },
+        {
+          "fullyQualifiedName": "Segment",
+          "name": "Segment",
+          "type": "Text",
+          "label": "Segment"
+        },
+        {
+          "fullyQualifiedName": "Revenue",
+          "name": "Revenue",
+          "type": "Numeric",
+          "label": "Revenue",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 2,
+          "format": "#,##0.00",
+          "decimalSeparator": "."
+        },
+        {
+          "fullyQualifiedName": "Revenue_Target",
+          "name": "Revenue_Target",
+          "type": "Numeric",
+          "label": "Revenue Target",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 0,
+          "format": "0"
+        },
+        {
+          "fullyQualifiedName": "Revenue_Goal",
+          "name": "Revenue_Goal",
+          "type": "Numeric",
+          "label": "Revenue Goal",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 2,
+          "format": "#,##0.##",
+          "decimalSeparator": "."
+        },
+        {
+          "fullyQualifiedName": "Revenue_Left",
+          "name": "Revenue_Left",
+          "type": "Numeric",
+          "label": "Revenue Left",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 2,
+          "format": "#,##0.##",
+          "decimalSeparator": "."
+        },
+        {
+          "fullyQualifiedName": "Cost",
+          "name": "Cost",
+          "type": "Numeric",
+          "label": "Cost",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 2,
+          "format": "#,##0.00",
+          "decimalSeparator": "."
+        },
+        {
+          "fullyQualifiedName": "Cost_Target",
+          "name": "Cost_Target",
+          "type": "Numeric",
+          "label": "Cost Target",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 1,
+          "format": "0.#",
+          "decimalSeparator": "."
+        },
+        {
+          "fullyQualifiedName": "Cost_Goal",
+          "name": "Cost_Goal",
+          "type": "Numeric",
+          "label": "Cost Goal",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 2,
+          "format": "#,##0.00",
+          "decimalSeparator": "."
+        },
+        {
+          "fullyQualifiedName": "Cost_Left",
+          "name": "Cost_Left",
+          "type": "Numeric",
+          "label": "Cost Left",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 2,
+          "format": "#,##0.00",
+          "decimalSeparator": "."
+        },
+        {
+          "fullyQualifiedName": "Volume",
+          "name": "Volume",
+          "type": "Numeric",
+          "label": "Volume",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 2,
+          "format": "#,##0.00",
+          "decimalSeparator": "."
+        },
+        {
+          "fullyQualifiedName": "Volume_Target",
+          "name": "Volume_Target",
+          "type": "Numeric",
+          "label": "Volume Target",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 0,
+          "format": "0"
+        },
+        {
+          "fullyQualifiedName": "Volume_Goal",
+          "name": "Volume_Goal",
+          "type": "Numeric",
+          "label": "Volume Goal",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 2,
+          "format": "#,##0.00",
+          "decimalSeparator": "."
+        },
+        {
+          "fullyQualifiedName": "Volume_Left",
+          "name": "Volume_Left",
+          "type": "Numeric",
+          "label": "Volume Left",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 2,
+          "format": "#,##0.00",
+          "decimalSeparator": "."
+        },
+        {
+          "fullyQualifiedName": "Pipeline",
+          "name": "Pipeline",
+          "type": "Numeric",
+          "label": "Pipeline",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 2,
+          "format": "#,##0.00",
+          "decimalSeparator": "."
+        },
+        {
+          "fullyQualifiedName": "Pipeline_Target",
+          "name": "Pipeline_Target",
+          "type": "Numeric",
+          "label": "Pipeline Target",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 0,
+          "format": "0"
+        },
+        {
+          "fullyQualifiedName": "Pipeline_Goal",
+          "name": "Pipeline_Goal",
+          "type": "Numeric",
+          "label": "Pipeline Goal",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 2,
+          "format": "#,##0.00",
+          "decimalSeparator": "."
+        },
+        {
+          "fullyQualifiedName": "Pipeline_Left",
+          "name": "Pipeline_Left",
+          "type": "Numeric",
+          "label": "Pipeline Left",
+          "precision": 18,
+          "defaultValue": "0",
+          "scale": 2,
+          "format": "#,##0.00",
+          "decimalSeparator": "."
+        }
+      ]
+    }
+  ]
+}

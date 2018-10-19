@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CommandTarget__c</fullName>
+    <description>The target to issue the command to, for example SObject Name, etc</description>
+    <externalId>false</externalId>
+    <label>Command Target</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>
