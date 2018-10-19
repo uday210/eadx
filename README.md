@@ -1,4 +1,4 @@
-# SFDX  App
+# EADX Demos
 
 ## Dev, Build and Test
 
