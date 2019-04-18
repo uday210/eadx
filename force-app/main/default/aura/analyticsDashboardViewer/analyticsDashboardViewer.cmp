@@ -18,8 +18,7 @@
     
     <aura:handler name="change" value="{!v.dashboardId}" action="{!c.handleDashboardIdChange}"/>
     <aura:handler name="change" value="{!v.versionId}" action="{!c.handleVersionIdChange}"/>
-    
-    <c:proxy aura:id="proxy"/>    
+
     <wave:sdk aura:id="sdk"/>
     
     <div class="main">

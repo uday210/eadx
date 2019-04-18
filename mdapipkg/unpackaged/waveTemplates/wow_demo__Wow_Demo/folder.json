@@ -1,0 +1,72 @@
+{
+  "name": null,
+  "label": null,
+  "description": null,
+  "featuredAssets": {
+    "default": {
+      "assets": [
+        {
+          "id": "${App.Dashboards['Metric Trends'].Id}",
+          "name": null,
+          "namespace": null,
+          "type": null
+        },
+        {
+          "id": "${App.Dashboards['Bubbles'].Id}",
+          "name": null,
+          "namespace": null,
+          "type": null
+        },
+        {
+          "id": "${App.Dashboards['Table Grid Expansion'].Id}",
+          "name": null,
+          "namespace": null,
+          "type": null
+        },
+        {
+          "id": "${App.Dashboards['Dashboard Card Expansion'].Id}",
+          "name": null,
+          "namespace": null,
+          "type": null
+        },
+        {
+          "id": "${App.Dashboards['Performance Summary'].Id}",
+          "name": null,
+          "namespace": null,
+          "type": null
+        },
+        {
+          "id": "${App.Dashboards['Monitoring Dashboard'].Id}",
+          "name": null,
+          "namespace": null,
+          "type": null
+        },
+        {
+          "id": "${App.Dashboards['Geo Performance'].Id}",
+          "name": null,
+          "namespace": null,
+          "type": null
+        },
+        {
+          "id": "${App.Dashboards['Command Center'].Id}",
+          "name": null,
+          "namespace": null,
+          "type": null
+        },
+        {
+          "id": "${App.Dashboards['Cards'].Id}",
+          "name": null,
+          "namespace": null,
+          "type": null
+        },
+        {
+          "id": "${App.Dashboards['Card Carousel'].Id}",
+          "name": null,
+          "namespace": null,
+          "type": null
+        }
+      ]
+    }
+  },
+  "shares": []
+}

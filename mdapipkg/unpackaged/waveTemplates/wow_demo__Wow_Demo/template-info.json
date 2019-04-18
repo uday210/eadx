@@ -1,0 +1,276 @@
+{
+  "templateType" : "app",
+  "label" : "Pages Demo",
+  "name" : "Wow_Demo",
+  "assetVersion" : 42,
+  "variableDefinition" : "variables.json",
+  "uiDefinition" : "ui.json",
+  "rules" : [
+    {
+      "type" : "templateToApp",
+      "file" : "template-to-app-rules.json"
+    },
+    {
+      "type" : "appToTemplate",
+      "file" : "app-to-template-rules.json"
+    }
+  ],
+  "releaseInfo" : {
+    "templateVersion" : "1.0",
+    "notesFile" : "releaseNotes.html"
+  },
+  "folderDefinition" : "folder.json",
+  "externalFiles" : [
+    {
+      "file" : "external_files/DemoData1.csv",
+      "label" : "DemoData1",
+      "name" : "DemoData1",
+      "overwriteOnUpgrade" : "IfDifferent",
+      "schema" : "external_files/DemoData1.json",
+      "type" : "CSV"
+    },
+    {
+      "file" : "external_files/Germany.csv",
+      "label" : "Germany",
+      "name" : "Germany",
+      "schema" : "external_files/Germany.json",
+      "overwriteOnUpgrade" : "IfDifferent",
+      "type" : "CSV"
+    },
+    {
+      "file" : "external_files/Sample_Superstore.csv",
+      "label" : "Sample - Superstore",
+      "name" : "Sample_Superstore",
+      "schema" : "external_files/Sample_Superstore.json",
+      "overwriteOnUpgrade" : "IfDifferent",
+      "type" : "CSV"
+    },
+    {
+      "file" : "external_files/Sample_Superstore_with_Goals.csv",
+      "label" : "Sample - Superstore with Goals",
+      "name" : "Sample_Superstore_with_Goals",
+      "schema" : "external_files/Sample_Superstore_with_Goals.json",
+      "overwriteOnUpgrade" : "IfDifferent",
+      "type" : "CSV"
+    },
+    {
+      "file" : "external_files/Targets.csv",
+      "label" : "Targets",
+      "name" : "Targets",
+      "schema" : "external_files/Targets.json",
+      "overwriteOnUpgrade" : "IfDifferent",
+      "type" : "CSV"
+    }
+  ],
+  "lenses" : [ ],
+  "dashboards" : [
+    {
+      "label" : "Bubbles",
+      "name" : "Bubbles_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Bubbles.json"
+    },
+    {
+      "label" : "Card Carousel",
+      "name" : "Card_Carousel_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Card_Carousel.json"
+    },
+    {
+      "label" : "Cards",
+      "name" : "Cards_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Cards.json"
+    },
+    {
+      "label" : "Command Center",
+      "name" : "Geo_Performance_2_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Geo_Performance_2.json"
+    },
+    {
+      "label" : "Dashboard Card Expansion",
+      "name" : "Copy_of_Monitoring_Dashboard_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Copy_of_Monitoring_Dashboard.json"
+    },
+    {
+      "label" : "Geo Performance",
+      "name" : "Geo_Performance_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Geo_Performance.json"
+    },
+    {
+      "label" : "Metric Trends",
+      "name" : "New_dashboard53_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/New_dashboard53.json"
+    },
+    {
+      "label" : "Monitoring Dashboard",
+      "name" : "Monitoring_Dashboard_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Monitoring_Dashboard.json"
+    },
+    {
+      "label" : "Performance Summary",
+      "name" : "Performance_Summary_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Performance_Summary.json"
+    },
+    {
+      "label" : "Table Grid Expansion",
+      "name" : "Table_Grid_Expansion_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Table_Grid_Expansion.json"
+    }
+  ],
+  "eltDataflows" : [ ],
+  "storedQueries" : [ ],
+  "imageFiles" : [
+    {
+      "name" : "RectangleBlueTopCurvepng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/RectangleBlueTopCurve.png"
+    },
+    {
+      "name" : "RectangleBlueBottomCurvepng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/RectangleBlueBottomCurve.png"
+    },
+    {
+      "name" : "BlueToggleSwitchpng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/BlueToggleSwitch.png"
+    },
+    {
+      "name" : "blueTopWhiteBottompng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/blueTopWhiteBottom.png"
+    },
+    {
+      "name" : "CardCarouselBackGroundpng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/CardCarouselBackGround.png"
+    },
+    {
+      "name" : "CardsBackGroundpng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/CardsBackGround.png"
+    },
+    {
+      "name" : "CardsBackWhiteGreyBottompng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/CardWhiteGrey1.png"
+    },
+    {
+      "name" : "Rectangle2xpng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/RectangleDarkBlueTopRounded.png"
+    },
+    {
+      "name" : "Slice2xpng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/ExpandedRightPane.png"
+    },
+    {
+      "name" : "Group_32xpng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/CardTopGrey.png"
+    },
+    {
+      "name" : "Group_64xpng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/ImageForBubblesDashboard.png"
+    },
+    {
+      "name" : "Artboard2xpng42",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/CardWhiteGrey1.png"
+    },
+    {
+      "name" : "Example_12xpng7",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/LeftRightArrow.png"
+    },
+    {
+      "name" : "BubbleToggleRightpng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/bubbleToggleRight.png"
+    },
+    {
+      "name" : "BubbleToggleLeftpng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/bubbleToggleLeft.png"
+    },
+    {
+      "name" : "Line2xpng7",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/Line@2x.png"
+    },
+    {
+      "name" : "Artboard2xpng46",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/BlueOnlyBack.png"
+    },
+    {
+      "name" : "Group_41xpng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/Group 4@1x.png"
+    },
+    {
+      "name" : "Mask2xpng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/Mask@2x.png"
+    },
+    {
+      "name" : "Rectangle_92xpng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/Rectangle 9@2x.png"
+    },
+    {
+      "name" : "ComandCenterBackgroundpng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/ComandCenterBackground.png"
+    },
+    {
+      "name" : "Slice_22xpng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/Slice 2@2x.png"
+    },
+    {
+      "name" : "CommandCenterCountryImagepng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/CommandCenterCountryImage.png"
+    },
+    {
+      "name" : "ComandCenterLogopng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/ComandCenterLogo.png"
+    },
+    {
+      "name" : "Artboard2xpng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/BlueLine.png"
+    },
+    {
+      "name" : "Triangle2xpng",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/Triangle2xpng.png"
+    },
+    {
+      "name" : "Line_62xpng2",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/Line_62xpng2.png"
+    }
+  ],
+  "icons" : {
+    "appBadge" : {
+      "name" : "11.png"
+    },
+    "templateBadge" : {
+      "name" : "default.png"
+    },
+    "templateDetail" : { }
+  }
+}

@@ -1,22 +1,39 @@
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
     <aura:attribute name="assetId" type="String" access="GLOBAL" description="The id of the asset."/>
     <aura:attribute name="assetType" type="String" access="GLOBAL" description="The type of the asset."/>
-	<aura:attribute name="asset" type="Object" access="global" description="The currently selected asset object. May be null."/>
-	<aura:attribute name="assetDetails" type="Object" access="global" description="The currently selected asset object. May be null."/>    
+    <aura:attribute name="asset" type="Object" access="global" description="The currently selected asset object. May be null."/>
+    <aura:attribute name="assetDetails" type="Object" access="global" description="The currently selected asset object. May be null."/>    
+    <aura:attribute name="assetHistoryColumns" type="List" access="global" description="The columns to display for asset history. May be null."/>    
+    <aura:attribute name="assetHistory" type="Object" access="global" description="The currently selected asset history. May be null."/>    
+    <aura:attribute name="assetHistoryData" type="Object" access="global" description="The currently selected asset history for display in table (flattened). May be null."/>    
+    <aura:attribute name="selectedAssetHistoryId" type="String" access="global" description="The id of the currently selected asset history. May be null."/>    
     <aura:attribute name="assetCamelType" type="String" access="GLOBAL" description="The camelcase type label of the asset."/>
     <aura:attribute name="json" type="String" access="GLOBAL" description="The JSON resprsentation of the asset."/>
-
+    
     <aura:attribute name="dashboardId" type="String" access="GLOBAL" description="The id of the dashboard to show. May be null."/>
     <aura:attribute name="datasetId" type="String" access="GLOBAL" description="The id of the dataset to show. May be null."/>
+    <aura:attribute name="dataflowId" type="String" access="GLOBAL" description="The id of the dataflow to show. May be null."/>
     <aura:attribute name="lensId" type="String" access="GLOBAL" description="The id of the lens to show. May be null."/>
     <aura:attribute name="folderId" type="String" access="GLOBAL" description="The id of the folder to show. May be null."/>
     <aura:attribute name="templateId" type="String" access="GLOBAL" description="The id of the template to show. May be null."/>
     
     <aura:handler name="change" value="{!v.asset}" action="{!c.handleAssetChange}"/>
     
+    <c:proxy aura:id="proxy"/>
+    
     <wave:sdk aura:id="sdk"/>
     
     <lightning:card iconName="standard:hierarchy" title="{!'Analytics ' + v.assetCamelType + ': ' + v.asset.label}">
+        <aura:set attribute="actions">
+            <lightning:select onchange="{!c.handlePreviewVersion}" value="{!v.selectedAssetHistoryId}" label="History">
+                <option value="" selected="selected"></option>
+                <aura:iteration items="{!v.assetHistory}" var="version">
+                    <aura:if isTrue="{!version.label != 'PREVIEW'}">
+	                    <option value="{!version.id}">{!version.label + ' by ' + version.createdByName + ' on ' + version.createdDateFormatted} </option>
+                    </aura:if>
+                </aura:iteration>
+            </lightning:select>
+        </aura:set>        
         <div class="asset-outer" aura:id="asset-outer">
             <lightning:tabset >                    
                 <lightning:tab label="Preview">
@@ -40,12 +57,23 @@
                 </lightning:tab>
                 <lightning:tab label="Details">
                     <div class="panel details">
-	                    Details
+                        Details
                     </div>
                 </lightning:tab>
                 <lightning:tab label="JSON">
                     <div class="panel json slds-m-horizontal_small">
                         <lightning:textarea aura:id="json_view" value="{!v.json}" class="json-view" label="{!v.asset.label}"/>
+                    </div>
+                </lightning:tab>
+                <lightning:tab label="History">
+                    <div class="panel history slds-m-horizontal_small">
+                        <lightning:datatable
+                                             keyField="id"
+                                             data="{!v.assetHistory}"
+                                             columns="{!v.assetHistoryColumns}"
+                                             hideCheckboxColumn="true"
+                                             onrowaction="{!c.handleAssetHistoryRowAction}"
+                                             /> 
                     </div>
                 </lightning:tab>
             </lightning:tabset>                    

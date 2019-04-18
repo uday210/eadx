@@ -2,6 +2,5 @@
 <CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
     <auraComponent>vfAnalyticstTemplateUtils</auraComponent>
     <label>Analytics Template Utils</label>
-    <mobileReady>false</mobileReady>
     <motif>Custom45: Ticket</motif>
 </CustomTab>

@@ -1,0 +1,55 @@
+{
+  "templateType" : "app",
+  "label" : "IoT Demo",
+  "name" : "IoT_Demo",
+  "namespace" : "eadx",
+  "description" : "You know that AI is coming for your job, and those creepy dog robot things are going to hunt us all down, right? Sure, you will not be able to stop the inevitable, but you can better understand how we screwed things up using our amazing analytics pack.",
+  "assetVersion" : 41.0,
+  "variableDefinition" : "variables.json",
+  "uiDefinition" : "ui.json",
+  "rules" : [
+    {
+      "type" : "templateToApp",
+      "file" : "template-to-app-rules.json"
+    },
+    {
+      "type" : "appToTemplate",
+      "file" : "app-to-template-rules.json"
+    }
+  ],
+  "releaseInfo" : {
+    "templateVersion" : "1.0",
+    "notesFile" : "releaseNotes.html"
+  },
+  "folderDefinition" : "folder.json",
+  "externalFiles" : [ ],
+  "lenses" : [ ],
+  "dashboards" : [
+    {
+      "label" : "IoT dashboard",
+      "name" : "iot_dashboard_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/iot_dashboard.json"
+    }
+  ],
+  "eltDataflows" : [ ],
+  "datasetFiles" : [
+    {
+      "label" : "Test",
+      "name" : "Test",
+      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
+      "userXmd" : "dataset_files/Test_XMD.json"
+    }
+  ],
+  "storedQueries" : [ ],
+  "imageFiles" : [ ],
+  "icons" : {
+    "appBadge" : {
+      "name" : "16.png"
+    },
+    "templateBadge" : {
+      "name" : "default.png"
+    },
+    "templateDetail" : { }
+  }
+}

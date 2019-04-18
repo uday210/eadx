@@ -2,6 +2,5 @@
 <CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
     <auraComponent>mockTab</auraComponent>
     <label>Apex Step Demo</label>
-    <mobileReady>false</mobileReady>
     <motif>Custom67: Gears</motif>
 </CustomTab>

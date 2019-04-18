@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CspTrustedSite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <context>All</context>
+    <endpointUrl>https://element-e-w-j-aj-a-hh-o-xa.quipelements.com</endpointUrl>
+    <isActive>true</isActive>
+</CspTrustedSite>

@@ -3,6 +3,5 @@
     <description>Created by Lightning App Builder</description>
     <flexiPage>Einstein_Vision</flexiPage>
     <label>Einstein Vision</label>
-    <mobileReady>false</mobileReady>
     <motif>Custom38: Camera</motif>
 </CustomTab>

@@ -6,12 +6,12 @@
     <label>proxy</label>
     <packageVersions>
         <majorNumber>1</majorNumber>
-        <minorNumber>7</minorNumber>
-        <namespace>sf_com_apps</namespace>
+        <minorNumber>18</minorNumber>
+        <namespace>sf_chttr_apps</namespace>
     </packageVersions>
     <packageVersions>
         <majorNumber>1</majorNumber>
-        <minorNumber>6</minorNumber>
-        <namespace>webider_ltcfree</namespace>
+        <minorNumber>7</minorNumber>
+        <namespace>sf_com_apps</namespace>
     </packageVersions>
 </ApexPage>

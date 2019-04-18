@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "c/audiosynth": [
+                "../staticresources/audiosynth/audiosynth.js"
+            ],
+            "c/cometd": [
+                "../staticresources/cometd/cometd.js"
+            ],
+            "c/leaflet": [
+                "../staticresources/leaflet/leaflet.js"
+            ],
+            "c/nouislider": [
+                "../staticresources/nouislider/nouislider.js"
+            ]
+        }
+    }
+}

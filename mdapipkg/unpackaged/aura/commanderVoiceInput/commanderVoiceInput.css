@@ -1,0 +1,21 @@
+.THIS {
+}
+
+.THIS .hide {
+    display: none;
+}
+
+.THIS iframe {
+    border: 0px none;
+    outline: 0px none;
+}
+
+.THIS iframe.hidden {
+    display: none;
+    height: 0;
+    width: 0;
+}
+
+.THIS > input {
+    width: 100%;
+}

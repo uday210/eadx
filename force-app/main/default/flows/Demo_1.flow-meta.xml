@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <name>Choose_Screen</name>
+        <label>Choose Screen</label>
+        <locationX>118</locationX>
+        <locationY>46</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Screen_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>screenName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>flowDemo1</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Screen1</targetReference>
+            </connector>
+            <label>Screen 1</label>
+        </rules>
+        <rules>
+            <name>Screen_2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>screenName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>flowDemo2</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Screen2</targetReference>
+            </connector>
+            <label>Screen 2</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Demo 1 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Demo 1</label>
+    <processType>Flow</processType>
+    <screens>
+        <name>Screen1</name>
+        <label>Screen1</label>
+        <locationX>113</locationX>
+        <locationY>241</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>FlowDemo1</name>
+            <extensionName>eadx:flowDemo1</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Screen2</name>
+        <label>Screen2</label>
+        <locationX>320</locationX>
+        <locationY>185</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>FlowDemo2</name>
+            <extensionName>eadx:flowDemo2</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <startElementReference>Choose_Screen</startElementReference>
+    <status>Draft</status>
+    <variables>
+        <name>screenName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue>flowDemo1</stringValue>
+        </value>
+    </variables>
+</Flow>

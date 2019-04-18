@@ -9,6 +9,13 @@
                 items: []
             },
             {
+                label: 'Lenses',
+                name: 'lenses',
+                disabled: false,
+                expanded: false,
+                items: []
+            },
+            {
                 label: 'Datasets',
                 name: 'datasets',
                 disabled: false,
@@ -16,12 +23,12 @@
                 items: []
             },
             {
-                label: 'Lenses',
-                name: 'lenses',
+                label: 'Dataflows',
+                name: 'dataflows',
                 disabled: false,
                 expanded: false,
                 items: []
-            },
+            },            
             {
                 label: 'Folders',
                 name: 'folders',
@@ -45,27 +52,31 @@
         self.listDashboards(component, function(err, dashboards) {
             self.addAssetItems(component, 'dashboards', dashboards);
             
-            self.listDatasets(component, function(err, datasets) {
-                self.addAssetItems(component, 'datasets', datasets);
+            self.listLenses(component, function(err, lenses) {
+                self.addAssetItems(component, 'lenses', lenses);
                 
-                self.listLenses(component, function(err, lenses) {
-                    self.addAssetItems(component, 'lenses', lenses);
+                self.listDatasets(component, function(err, datasets) {
+                    self.addAssetItems(component, 'datasets', datasets);
+                
+                    self.listDataflows(component, function(err, dataflows) {
+                        console.warn('listDataflows returned: ', dataflows);
+                        self.addAssetItems(component, 'dataflows', dataflows);
                     
-                    self.listFolders(component, function(err, folders) {
-                        self.addAssetItems(component, 'folders', folders);
-                        
-                        
                         self.listFolders(component, function(err, folders) {
                             self.addAssetItems(component, 'folders', folders);
-
-                            self.listTemplates(component, function(err, templates) {
-                                self.addAssetItems(component, 'templates', templates);
-                                
-                                if (typeof callback === 'function') {
-                                    callback('ready');
-                                }
-                            });        
-                        });                 
+                                                        
+                            self.listFolders(component, function(err, folders) {
+                                self.addAssetItems(component, 'folders', folders);
+    
+                                self.listTemplates(component, function(err, templates) {
+                                    self.addAssetItems(component, 'templates', templates);
+                                    
+                                    if (typeof callback === 'function') {
+                                        callback('ready');
+                                    }
+                                });
+                            });
+                        });
                     });
                 });
             });
@@ -96,6 +107,17 @@
             component.set('v.assetId', item.asset.id);
             component.set('v.asset', item.asset);
             
+            // Fire the event
+            var params = {
+                assetType: item.asset.type,
+                assetId: item.asset.id,
+                asset: item.asset
+            };
+            //console.warn('params: ', params);
+            var evt = $A.get('e.c:analyticsTreeSelection');
+            //console.warn('evt: ', evt);
+            evt.setParams(params);
+            evt.fire();            
         }
         
     },
@@ -225,6 +247,24 @@
                 }
             }
         }));		
+    },
+
+    listDataflows: function(component, callback) {
+        var self = this;
+        var proxy = component.find('proxy');
+        
+        // Construct/generate this!!!!!!!!!!!!!!!!
+        var url = '/services/data/v46.0/wave/dataflows';
+        var config = null;
+        
+        proxy.exec(url, 'GET', config, function(response) {
+            console.warn('listDataflows response: ', response);
+            if (callback !== null && typeof callback !== 'undefined') {
+                callback(null, response.body.dataflows);
+            } else {
+                return null;
+            }            
+        });
     },
     
     listDashboards: function(component, callback) {

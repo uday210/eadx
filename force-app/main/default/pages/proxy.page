@@ -1,6 +1,6 @@
-<apex:page applyBodyTag="false" applyHtmlTag="false" showHeader="false" standardStylesheets="false">
-
+<apex:page applyBodyTag="false" applyHtmlTag="false" showHeader="false" standardStylesheets="false" docType="html-5.0">
     <script type="text/javascript">
+    
     var ltng_origin = "{!$CurrentPage.Parameters.ltng_origin}";
     var ltng_url = "{!$CurrentPage.Parameters.ltng_url}";
     var _uid = "{!$CurrentPage.Parameters.ltng_uid}";
@@ -41,6 +41,7 @@
     }            
     
     function sendRequest(config) {
+        //console.warn('config: ', config);
         var req = createRequest();
         
         req.onreadystatechange = function() {
@@ -115,7 +116,7 @@
             req.responseType = config.responseType || "json";
         }
             
-        if (config.method === "POST") {
+        if (config.body ) {
             //console.warn('vfproxy POSTING config.body: ', config.body);
             req.send(config.body);
         } else {

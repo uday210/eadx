@@ -1,0 +1,37 @@
+.THIS {
+    display: block;
+}
+
+.THIS .log {
+    width: 100%;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.THIS .log .item {
+    border: 1px solid #FFFFFF;
+    border-radius: 20px;
+    clear: both;
+    margin: 2px 5px;
+    padding: 8px;
+    max-width: 80%;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.THIS .log .item.left {
+    float: left;
+}
+
+.THIS .log .item.left div {
+	text-align: left;
+}
+
+.THIS .log .item.right {
+    float: right;    
+}
+
+.THIS .log .item.right div {
+	text-align: left;
+}

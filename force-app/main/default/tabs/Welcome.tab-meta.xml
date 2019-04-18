@@ -2,6 +2,5 @@
 <CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
     <auraComponent>welcome</auraComponent>
     <label>Welcome</label>
-    <mobileReady>false</mobileReady>
     <motif>Custom73: Highway Sign</motif>
 </CustomTab>

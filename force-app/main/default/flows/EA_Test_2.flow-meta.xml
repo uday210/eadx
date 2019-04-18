@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Query_EA</name>
+        <label>Query EA</label>
+        <locationX>245</locationX>
+        <locationY>308</locationY>
+        <actionName>EinsteinAnalyticsInvocableAction</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Test</targetReference>
+        </connector>
+        <outputParameters>
+            <assignToReference>TheMaxAmount</assignToReference>
+            <name>max_Amount</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>TheName</assignToReference>
+            <name>Name</name>
+        </outputParameters>
+    </actionCalls>
+    <interviewLabel>EA Test {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>EA Test 2</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Test</name>
+        <label>Test</label>
+        <locationX>622</locationX>
+        <locationY>245</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>The_Name_Field</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>TheName</elementReference>
+            </defaultValue>
+            <fieldText>The Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>The_Max_Amount</name>
+            <dataType>Number</dataType>
+            <defaultValue>
+                <elementReference>TheMaxAmount</elementReference>
+            </defaultValue>
+            <fieldText>The Max Amount</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Query_EA</startElementReference>
+    <status>Draft</status>
+    <variables>
+        <name>TheMaxAmount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <name>TheName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

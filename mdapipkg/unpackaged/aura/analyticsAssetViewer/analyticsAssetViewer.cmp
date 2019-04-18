@@ -1,0 +1,54 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="assetId" type="String" access="GLOBAL" description="The id of the asset."/>
+    <aura:attribute name="assetType" type="String" access="GLOBAL" description="The type of the asset."/>
+	<aura:attribute name="asset" type="Object" access="global" description="The currently selected asset object. May be null."/>
+	<aura:attribute name="assetDetails" type="Object" access="global" description="The currently selected asset object. May be null."/>    
+    <aura:attribute name="assetCamelType" type="String" access="GLOBAL" description="The camelcase type label of the asset."/>
+    <aura:attribute name="json" type="String" access="GLOBAL" description="The JSON resprsentation of the asset."/>
+
+    <aura:attribute name="dashboardId" type="String" access="GLOBAL" description="The id of the dashboard to show. May be null."/>
+    <aura:attribute name="datasetId" type="String" access="GLOBAL" description="The id of the dataset to show. May be null."/>
+    <aura:attribute name="lensId" type="String" access="GLOBAL" description="The id of the lens to show. May be null."/>
+    <aura:attribute name="folderId" type="String" access="GLOBAL" description="The id of the folder to show. May be null."/>
+    <aura:attribute name="templateId" type="String" access="GLOBAL" description="The id of the template to show. May be null."/>
+    
+    <aura:handler name="change" value="{!v.asset}" action="{!c.handleAssetChange}"/>
+    
+    <wave:sdk aura:id="sdk"/>
+    
+    <lightning:card iconName="standard:hierarchy" title="{!'Analytics ' + v.assetCamelType + ': ' + v.asset.label}">
+        <div class="asset-outer" aura:id="asset-outer">
+            <lightning:tabset >                    
+                <lightning:tab label="Preview">
+                    <div class="panel viewer slds-m-horizontal_small">
+                        <div class="{!v.assetType == 'dashboard' ? 'show' : 'hide'}">
+                            <c:analyticsDashboardViewer dashboardId="{!v.dashboardId}"/>
+                        </div>                          
+                        <div class="{!v.assetType == 'lens' ? 'show' : 'hide'}">
+                            <c:analyticsLensViewer lensId="{!v.lensId}"/>
+                        </div>                          
+                        <div class="{!v.assetType == 'dataset' ? 'show' : 'hide'}">
+                            <c:analyticsDatasetViewer datasetId="{!v.datasetId}"/>
+                        </div>              
+                        <div class="{!v.assetType == 'folder' ? 'show' : 'hide'}">
+                            <c:analyticsFolderViewer folderId="{!v.folderId}" folder="{!v.asset}"/>
+                        </div>              
+                        <div class="{!v.assetType == 'template' ? 'show' : 'hide'}">
+                            <c:analyticsTemplateViewer templateId="{!v.templateId}"/>
+                        </div>              
+                    </div>
+                </lightning:tab>
+                <lightning:tab label="Details">
+                    <div class="panel details">
+	                    Details
+                    </div>
+                </lightning:tab>
+                <lightning:tab label="JSON">
+                    <div class="panel json slds-m-horizontal_small">
+                        <lightning:textarea aura:id="json_view" value="{!v.json}" class="json-view" label="{!v.asset.label}"/>
+                    </div>
+                </lightning:tab>
+            </lightning:tabset>                    
+        </div>
+    </lightning:card>            
+</aura:component>

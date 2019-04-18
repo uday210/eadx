@@ -2,6 +2,5 @@
 <CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
     <auraComponent>dashboardVersionUtil</auraComponent>
     <label>Dashboard Versions</label>
-    <mobileReady>false</mobileReady>
     <motif>Custom6: Triangle</motif>
 </CustomTab>

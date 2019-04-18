@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable" access="global">
+    <aura:attribute name="dashboardId" type="String" access="global" default="0FKB000000092VyOAI"/>
+    <lightning:layout>
+    	<lightning:layoutItem size="4">
+            <c:mockEditor dashboardId="{!v.dashboardId}"/>        
+        </lightning:layoutItem>
+    	<lightning:layoutItem size="8">
+            <div class="slds-m-left_small">
+				<wave:waveDashboard dashboardId="{!v.dashboardId}" height="750" showTitle="false" showHeader="false" showSharing="false"/>            
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

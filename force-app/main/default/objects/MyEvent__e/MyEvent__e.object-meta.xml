@@ -4,4 +4,5 @@
     <eventType>StandardVolume</eventType>
     <label>MyEvent</label>
     <pluralLabel>MyEvents</pluralLabel>
+    <publishBehavior>PublishImmediately</publishBehavior>
 </CustomObject>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#79B3D2</headerColor>
+        <logo>Circleiconsmicsvg</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Voice Demo</label>
+    <navType>Standard</navType>
+    <tabs>standard-home</tabs>
+    <tabs>Commander_Tools</tabs>
+    <tabs>Analytics_Dashboards</tabs>
+    <tabs>Lightning_Flows</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>Quip</tabs>
+    <tabs>NamedQuery__c</tabs>
+    <tabs>Actionable__c</tabs>
+    <tabs>standard-StreamingChannel</tabs>
+    <tabs>Grammar__c</tabs>
+    <tabs>Commander</tabs>
+    <tabs>Voice_Test</tabs>
+    <tabs>VoiceConfig__c</tabs>
+    <tabs>Token__c</tabs>
+    <tabs>Mock__c</tabs>
+    <tabs>Player__c</tabs>
+    <tabs>Fortnite_API_Cache__c</tabs>
+    <tabs>Fortnite_Player_Data__c</tabs>
+    <tabs>Fortnite_Player__c</tabs>
+    <tabs>Salesforce_Team__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Voice_Demo_UtilityBar</utilityBar>
+</CustomApplication>

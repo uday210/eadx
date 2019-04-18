@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>EA_Query_Demo</name>
+        <label>EA Query Demo</label>
+        <locationX>202</locationX>
+        <locationY>274</locationY>
+        <actionName>EinsteinAnalyticsInvocableAction</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Cool_Demo</targetReference>
+        </connector>
+        <outputParameters>
+            <assignToReference>My_Max_Amount</assignToReference>
+            <name>max_Amount</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>My_Opportunity_Name</assignToReference>
+            <name>Name</name>
+        </outputParameters>
+    </actionCalls>
+    <interviewLabel>Awesome Demo Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Awesome Demo Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Cool_Demo</name>
+        <label>Cool Demo</label>
+        <locationX>430</locationX>
+        <locationY>188</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Opportunity_Name</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>My_Opportunity_Name</elementReference>
+            </defaultValue>
+            <fieldText>Opportunity Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Max_Amount</name>
+            <dataType>Currency</dataType>
+            <defaultValue>
+                <elementReference>My_Max_Amount</elementReference>
+            </defaultValue>
+            <fieldText>Max Amount</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>EA_Query_Demo</startElementReference>
+    <status>Draft</status>
+    <variables>
+        <name>My_Max_Amount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <name>My_Opportunity_Name</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

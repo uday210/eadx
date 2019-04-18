@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <name>Choose_Screen</name>
+        <label>Choose Screen</label>
+        <locationX>97</locationX>
+        <locationY>69</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>Flow_Demo_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>screenName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>flowDemo1</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Flow Demo 1</label>
+        </rules>
+        <rules>
+            <name>Flow_Demo_2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>screenName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>flowDemo2</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Flow Demo 2</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Flow Test 1 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Flow Test 1</label>
+    <processType>AutoLaunchedFlow</processType>
+    <status>InvalidDraft</status>
+    <variables>
+        <name>screenName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue>flowDemo1</stringValue>
+        </value>
+    </variables>
+</Flow>

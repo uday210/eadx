@@ -2,6 +2,5 @@
 <CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
     <auraComponent>dashboardTab</auraComponent>
     <label>Analytics Dashboards</label>
-    <mobileReady>false</mobileReady>
     <motif>Custom4: Hexagon</motif>
 </CustomTab>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#C2E8FF</headerColor>
+        <logo>tdx19_surfing_128x128</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <description>Einstein Analytics Developer Experience demos for TrailheaDX 2019</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>TrailheaDX 2019</label>
+    <navType>Standard</navType>
+    <tabs>Welcome</tabs>
+    <tabs>Analytics_Explorer</tabs>
+    <tabs>SDK_Demo</tabs>
+    <tabs>Location_Tree</tabs>
+    <tabs>Page_Test</tabs>
+    <tabs>Image_Map_Test</tabs>
+    <tabs>Apex_Step_Demo</tabs>
+    <tabs>Template_Manager</tabs>
+    <tabs>Twitter_Live</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>vf_Analytics_Template_Utils</tabs>
+    <tabs>vf_Analytics_Sharing_Utils</tabs>
+    <tabs>Token__c</tabs>
+    <tabs>ADX_Demo</tabs>
+    <tabs>Mock__c</tabs>
+    <tabs>Role_Tree</tabs>
+    <tabs>Player__c</tabs>
+    <tabs>Fortnite_API_Cache__c</tabs>
+    <tabs>Data_Loader</tabs>
+    <tabs>Fortnite_Player_Data__c</tabs>
+    <tabs>Fortnite_Player__c</tabs>
+    <tabs>Salesforce_Team__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Dreamforce_18_UtilityBar</utilityBar>
+</CustomApplication>

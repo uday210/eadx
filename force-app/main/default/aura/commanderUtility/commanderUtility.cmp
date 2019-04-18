@@ -1,0 +1,63 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="commanderState" type="String" access="global"/>
+    <aura:attribute name="command" type="String" default="" access="global"/>
+    
+    <aura:attribute name="requestInProgress" type="Boolean" access="private" default="false"/>
+    <aura:attribute name="history" type="List" access="private"/>
+    <aura:attribute name="historyIndex" type="Integer" access="private"/>
+    <aura:attribute name="helpOpen" type="Boolean" access="private" default="false"/>
+    
+    <aura:registerEvent name="ViewSobjectType" 
+                        type="c:ViewSobjectTypeEvent"
+                        access="GLOBAL"/>
+    
+	<aura:registerEvent name="ViewAnalyticsDashboard" 
+                        type="c:ViewAnalyticsDashboardEvent"
+                        access="GLOBAL"/>
+
+    <aura:registerEvent name="AnalyticsDashboardUpdatePage" 
+                        type="c:AnalyticsDashboardUpdatePageEvent"
+                        access="GLOBAL"/>
+
+	<aura:registerEvent name="InvocableActionApex" 
+                        type="c:InvocableActionApexEvent"
+                        access="GLOBAL"/>
+    
+	<aura:handler name="init" 
+                  value="{!this}" 
+                  action="{!c.init}"/>
+
+    <aura:handler name="onActionExecute" 
+                  event="einsteinconduit:actionExecuteEvent" 
+                  action="{!c.handleCommanderEvent}"
+                  includeFacets="true"/>
+
+    <aura:handler name="onCommanderError" 
+   				  event="einsteinconduit:commanderApiErrorEvent" 
+		          action="{!c.handleCommanderError}"
+                  includeFacets="true"/> 
+    
+    <einsteinconduit:commanderApi aura:id="commanderApi" 
+                                  limit="10"
+                                  readyOnly="true" 
+                                  expandedView="true"
+                                  contextualState="{! v.commanderState }"/>
+    
+    <lightning:utilityBarAPI aura:id="utilitybar"/>
+        
+    <lightning:layout horizontalAlign="left">
+        <lightning:layoutItem size="10">
+            <span onkeypress="{!c.checkForEnter}" onkeydown="{!c.checkForArrow}">
+                <lightning:input aura:id="command" 
+                                 label="Command" 
+                                 name="command" 
+                                 value="{!v.command}"/>
+            </span>
+        </lightning:layoutItem>
+        <lightning:layoutItem>
+            <lightning:button iconName="utility:chevronright" 
+                              onclick="{!c.callCommander}" 
+                              disabled="{! v.requestInProgress }"/>
+        </lightning:layoutItem>
+    </lightning:layout>      
+</aura:component>

@@ -35,6 +35,24 @@
             var win = window.open(url, '_blank');
             win.focus();            
         }
-    }
+    },
+    
+    onWaveSelectionChanged: function(component, event, helper) {        
+        //console.warn('################################ onWaveSelectionChanged: ', event);
+        var params = event.getParams();
+        var value = null;
+        var json = null;
+        for (var key in params) {
+            value = params[key];
+            //console.warn(key, ' = ', value, typeof value);
+            if (typeof value === 'object') {
+                json = JSON.stringify(value, null, 2)
+                //console.warn('json: ', json);
+                value = JSON.parse(json);
+                //console.warn('value: ', value);
+            }
+            //console.warn(key + ' = ' + value);
+        }
+    }    
     
 })

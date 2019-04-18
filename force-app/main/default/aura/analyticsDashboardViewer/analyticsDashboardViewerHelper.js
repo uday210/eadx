@@ -5,10 +5,12 @@
         var self = this;
         
         var height = component.get('v.height');
-        
-        var outer = component.find("dashboard-outer");
-        $A.util.removeClass(outer, "fadein");
-        $A.util.addClass(outer, "fadeout");
+
+		/*        
+        //var outer = component.find("dashboard-outer");
+        //$A.util.removeClass(outer, "fadein");
+        //$A.util.addClass(outer, "fadeout");
+        */
         
         var config = {
             dashboardId: dashboardId,
@@ -19,6 +21,7 @@
             showSharing: false
         };
         $A.createComponent("wave:waveDashboard", config, function(cmp, msg, err) {
+            //console.warn('analyticsDashboardViewer.showDashboard createComponent returned: ', cmp, msg, err);
             var dashboard = component.find("dashboard");
             if (err) {
                 console.warn("error: ", err);
@@ -26,52 +29,16 @@
                 $A.util.addClass(cmp, "dashboard-container");
                 //$A.util.addClass(outer, "hidden");
                 dashboard.set("v.body", [cmp]);
+                
+                /*
                 setTimeout($A.getCallback(function() {
                     //$A.util.removeClass(outer, "hidden");
-                    $A.util.removeClass(outer, "fadeout");
-                    $A.util.addClass(outer, "fadein");
+                    //$A.util.removeClass(outer, "fadeout");
+                    //$A.util.addClass(outer, "fadein");
                 }), 500);
+                */
             }            
         });
-        
-        
-        return;
-        
-        // Preview code below
-        self.previewChangedDashboard(component, dashboardId, versionId, function(err, dashboard) {
-            //console.warn('previewChangedDashboard returned: ', err, dashboard);
-            if (dashboard) {
-                var height = component.get('v.height');
-                
-                var outer = component.find("dashboard-outer");
-                $A.util.removeClass(outer, "fadein");
-                $A.util.addClass(outer, "fadeout");
-                
-                var config = {
-                    dashboardId: dashboard.id,
-                    height: height,
-                    openLinksInNewWindow: true,
-                    showHeader: false,
-                    showTitle: false,
-                    showSharing: false
-                };
-                $A.createComponent("wave:waveDashboard", config, function(cmp, msg, err) {
-                    var dashboard = component.find("dashboard");
-                    if (err) {
-                        console.warn("error: ", err);
-                    } else {
-                        $A.util.addClass(cmp, "dashboard-container");
-                        //$A.util.addClass(outer, "hidden");
-                        dashboard.set("v.body", [cmp]);
-                        setTimeout($A.getCallback(function() {
-                            //$A.util.removeClass(outer, "hidden");
-                            $A.util.removeClass(outer, "fadeout");
-                            $A.util.addClass(outer, "fadein");
-                        }), 500);
-                    }            
-                });                   
-            }
-        });        
     },
     
     getDashboard: function(component, dashboardId, callback) {
@@ -79,7 +46,7 @@
         
         var proxy = component.find('proxy');
         var self = this;
-        var url = '/services/data/v44.0/wave/dashboards/' + dashboardId;
+        var url = '/services/data/v46.0/wave/dashboards/' + dashboardId;
         var method = 'GET';
         
         var body = null;
@@ -100,7 +67,7 @@
         
         var proxy = component.find('proxy');
         var self = this;
-        var url = '/services/data/v44.0/wave/dashboards/' + dashboardId + '/versions/' + versionId;
+        var url = '/services/data/v46.0/wave/dashboards/' + dashboardId + '/versions/' + versionId;
         var method = 'GET';
         
         var body = null;
@@ -147,7 +114,7 @@
                     if (err) {
                         console.warn('createTempDashboard error: ', err);
                     } else {
-                        var url = '/services/data/v44.0/wave/dashboards';
+                        var url = '/services/data/v46.0/wave/dashboards';
                         var method = 'POST';
                         
                         var uname = dashboard.name + '_' + version.name + '_preview';
@@ -228,7 +195,7 @@
         
         var proxy = component.find('proxy');
         var self = this;
-        var url = '/services/data/v44.0/wave/dashboards';
+        var url = '/services/data/v46.0/wave/dashboards';
         var method = 'GET';
         
         var body = null;
@@ -262,7 +229,7 @@
         
         var proxy = component.find('proxy');
         var self = this;
-        var url = '/services/data/v44.0/wave/' + type + '/' + id + '/versions';
+        var url = '/services/data/v46.0/wave/' + type + '/' + id + '/versions';
         var method = 'GET';
         
         var body = null;

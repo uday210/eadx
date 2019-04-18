@@ -2,9 +2,11 @@
     <aura:attribute name="assetId" type="String" access="global" description="The ID of the currently selected asset. May be null"/>
     <aura:attribute name="assetType" type="String" access="global" description="The type of the currently selected asset. May be null"/>
     <aura:attribute name="asset" type="Object" access="global" description="The currently selected asset object. May be null"/>
-    <aura:attribute name="items" type="Object" access="private"/>
-    <aura:attribute name="itemMaps" type="Object" access="private"/>
+    <aura:attribute name="items" type="Object" access="global"/>
+    <aura:attribute name="itemMaps" type="Object" access="global"/>
 
+    <aura:registerEvent name="analyticsTreeSelection" type="c:analyticsTreeSelection"/>
+                                                                                     
     <aura:handler name="init" value="{!this}" action="{!c.init}" />
     
 	<aura:method name="refresh" description="Force the tree to refresh">
@@ -13,6 +15,8 @@
     
     <wave:sdk aura:id="sdk"/>
 
+    <c:proxy aura:id="proxy"/>
+    
     <div class="tree">
 	    <lightning:tree items="{! v.items }" onselect="{!c.handleSelect}"/>
     </div>

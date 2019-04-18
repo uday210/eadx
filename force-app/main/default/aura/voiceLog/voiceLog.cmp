@@ -1,0 +1,22 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="height" type="String" access="global" default="8rem"/>
+    <aura:attribute name="logentries" type="Object[]" access="global" default="[]"/>
+    <aura:attribute name="style_left" type="String" access="global" default="background-color: #E9EAED;"/>
+    <aura:attribute name="style_right" type="String" access="global" default="background-color: #00AAFB; color: #EFF7FD;"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:method name="log" action="{!c.log}" description="Logs the text for the specified user"> 
+        <aura:attribute name="user" type="String" required="true"/> 
+        <aura:attribute name="text" type="String" required="true"/> 
+    </aura:method>    
+    <aura:method name="clear" action="{!c.clear}" description="Clears the log"> 
+    </aura:method>    
+    <div class="outer">
+        <div aura:id="log" class="log" style="{!'height: ' + v.height}">
+            <aura:iteration items="{!v.logentries}" var="entry">
+                <p class="{!'item ' + entry.user}" style="{!entry.user == 'left' ? v.style_left : v.style_right}">
+                    <div>{!entry.text}</div>
+                </p>
+            </aura:iteration>
+        </div>
+    </div>
+</aura:component>

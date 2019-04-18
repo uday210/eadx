@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>Template_Wizard {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Template_Wizard</label>
+    <processType>Flow</processType>
+    <screens>
+        <name>Start_Screen</name>
+        <label>Start Screen</label>
+        <locationX>266</locationX>
+        <locationY>104</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Wizard_Start_Screen</name>
+            <extensionName>eadx:wizardStartScreen</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>startFrom</name>
+                <value>
+                    <elementReference>startFrom</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+            <outputParameters>
+                <assignToReference>startFrom</assignToReference>
+                <name>startFrom</name>
+            </outputParameters>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <startElementReference>Start_Screen</startElementReference>
+    <status>Draft</status>
+    <variables>
+        <name>startFrom</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

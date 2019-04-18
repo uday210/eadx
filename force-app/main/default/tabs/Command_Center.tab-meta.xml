@@ -3,6 +3,5 @@
     <description>Created by Lightning App Builder</description>
     <flexiPage>Command_Center</flexiPage>
     <label>Command Center</label>
-    <mobileReady>false</mobileReady>
     <motif>Custom64: Compass</motif>
 </CustomTab>

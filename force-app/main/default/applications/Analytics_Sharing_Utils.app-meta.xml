@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Analytics Sharing Utils</label>
+    <navType>Standard</navType>
+    <tabs>Analytics_Sharing_Utils</tabs>
+    <tabs>Analytics_Template_Utils</tabs>
+    <tabs>Demo_Demo</tabs>
+    <tabs>Actionable__c</tabs>
+    <tabs>Grammar__c</tabs>
+    <tabs>VoiceConfig__c</tabs>
+    <tabs>NamedQuery__c</tabs>
+    <tabs>Token__c</tabs>
+    <tabs>Mock__c</tabs>
+    <tabs>Player__c</tabs>
+    <tabs>Fortnite_API_Cache__c</tabs>
+    <tabs>Fortnite_Player_Data__c</tabs>
+    <tabs>Fortnite_Player__c</tabs>
+    <tabs>Salesforce_Team__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Analytics_Sharing_Tools_UtilityBar</utilityBar>
+</CustomApplication>

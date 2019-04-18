@@ -1,0 +1,4 @@
+{
+  "name" : "${Variables.AppName}",
+  "label" : "${Variables.AppLabel}"
+}

@@ -2,6 +2,5 @@
 <CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
     <auraComponent>templateManagerTab</auraComponent>
     <label>Template Manager</label>
-    <mobileReady>false</mobileReady>
     <motif>Custom39: Telescope</motif>
 </CustomTab>

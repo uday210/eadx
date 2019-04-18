@@ -2,6 +2,5 @@
 <CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
     <auraComponent>dataLoaderTab</auraComponent>
     <label>Data Loader</label>
-    <mobileReady>false</mobileReady>
     <motif>Custom12: Circle</motif>
 </CustomTab>

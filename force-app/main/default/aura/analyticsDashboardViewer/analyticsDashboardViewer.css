@@ -13,7 +13,6 @@
 
 .THIS .dashboard-outer {
     opacity: 1;
-	transition: opacity 3s ease;    
 }
 
 .THIS .dashboard-outer.fadeout {

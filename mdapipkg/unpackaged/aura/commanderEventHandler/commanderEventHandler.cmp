@@ -1,0 +1,46 @@
+<aura:component controller="ApexSAQLController">
+    
+    <aura:attribute name="commanderState" type="String" access="global"/>
+    
+    <aura:attribute name="appCreateTargets" 
+                    type="List" 
+                    access="private" 
+                    default="['ManageCalculatorAirInvocable','GenericAirInvocable']"/>
+    
+    <aura:registerEvent name="AnalyticsAppCreate" 
+                        type="c:AnalyticsAppCreateEvent"
+                        access="GLOBAL"/>
+    
+    <aura:handler name="ViewSobjectType" 
+                  event="c:ViewSobjectTypeEvent" 
+                  action="{! c.handleViewSobjectTypePayload}"
+                  includeFacets="true"/>
+    
+    <aura:handler name="ViewAnalyticsDashboard" 
+                  event="c:ViewAnalyticsDashboardEvent" 
+                  action="{! c.handleDashboardEventPayload }"/>
+    
+    <aura:handler name="AnalyticsDashboardUpdatePage" 
+                  event="c:AnalyticsDashboardUpdatePageEvent" 
+                  action="{! c.handleDashboardUpdatePagePayload }"/>
+    
+    <aura:handler name="AnalyticsDashboardUpdatePage" 
+                  event="c:AnalyticsDashboardUpdatePageEvent" 
+                  action="{! c.handleDashboardUpdatePagePayload }"/>
+    
+    <aura:handler name="InvocableActionApex" 
+                  event="c:InvocableActionApexEvent" 
+                  action="{! c.handleInvocableActionApex }"/>
+    
+    <aura:registerEvent name="CommanderOutput" 
+                        type="c:CommanderOutputEvent"
+                        access="GLOBAL"/>
+    
+	<ltng:require scripts="{!join(',', $Resource.js_levenshtein, $Resource.string_similarity_js, $Resource.fuzzyset_js)}" afterScriptsLoaded="{!c.scriptsLoaded}"/>
+    
+    <lightning:navigation aura:id="navService"/>
+    <lightning:overlayLibrary aura:id="overlayApi"/>    
+    <wave:sdk aura:id="sdk"/>
+    <c:commanderEMP/>
+    <c:commanderUtility commanderState="{! v.commanderState }"/>
+</aura:component>

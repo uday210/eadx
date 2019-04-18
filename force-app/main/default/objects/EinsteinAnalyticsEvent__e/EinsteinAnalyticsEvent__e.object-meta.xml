@@ -4,4 +4,5 @@
     <eventType>StandardVolume</eventType>
     <label>EinsteinAnalyticsEvent</label>
     <pluralLabel>EinsteinAnalyticsEvents</pluralLabel>
+    <publishBehavior>PublishImmediately</publishBehavior>
 </CustomObject>

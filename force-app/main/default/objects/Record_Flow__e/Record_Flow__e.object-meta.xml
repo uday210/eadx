@@ -4,4 +4,5 @@
     <eventType>StandardVolume</eventType>
     <label>Record Flow</label>
     <pluralLabel>Record Flows</pluralLabel>
+    <publishBehavior>PublishImmediately</publishBehavior>
 </CustomObject>
