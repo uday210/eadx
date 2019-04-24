@@ -29,14 +29,22 @@
         var self = this;
         var proxy = component.find('proxy');
         var assetDetails = component.get('v.assetDetails');
-        proxy.getAssetHistory(assetDetails.historiesUrl, function(histories) {
-            //console.warn('analyticsAssetViewerHelper.getAssetHistory - histories: ', histories);
+        if (assetDetails === null || typeof assetDetails === 'undefined') {
             if (callback !== null && typeof callback !== 'undefined') {
-                callback(null, histories);
+                callback(null, null);
             } else {
                 return null;
-            }            
-        });
+            }                        
+        } else {
+            proxy.getAssetHistory(assetDetails.historiesUrl, function(histories) {
+                //console.warn('analyticsAssetViewerHelper.getAssetHistory - histories: ', histories);
+                if (callback !== null && typeof callback !== 'undefined') {
+                    callback(null, histories);
+                } else {
+                    return null;
+                }            
+            });
+        }
     },
         
     doPreview: function(component, row) {
@@ -158,11 +166,13 @@
         
         var asset = component.get('v.asset');
         if (asset === null || typeof asset === 'undefined') {
-            callback(null, null);
+            if (callback !== null && typeof callback !== 'undefined') {
+	            callback(null, null);
+            }
         } else {
-            //console.warn('asset: ', JSON.stringify(asset, null, 2));
+            console.warn('asset: ', JSON.stringify(asset, null, 2));
             var assetType = asset.templateType ? 'template' : asset.type;
-            //console.warn('assetType: ' , assetType);
+            console.warn('assetType: ' , assetType);
             var assetId = asset.id;
             
             var dashboardId = asset.type === 'dashboard' ? assetId : null;
@@ -194,9 +204,9 @@
                 //var url = asset.url;
                 
                 // Use the internal API to get the dataflow details
-                //var url = '/insights/internal_api/v1.0/esObject/workflow/' + asset.id + '/json';
+                var url = '/insights/internal_api/v1.0/esObject/workflow/' + asset.id + '/json';
 
-				var url = 'https://adx-dev-ed.my.salesforce.com/insights/internal_api/v1.0/esObject/workflow/' + asset.id + '/json';
+				//var url = 'https://adx-dev-ed.my.salesforce.com/insights/internal_api/v1.0/esObject/workflow/' + asset.id + '/json';
                 
                 var config = null;
 

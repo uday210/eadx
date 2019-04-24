@@ -79,12 +79,16 @@
             window.parent.postMessage(json, ltng_origin);
         }
         
+        console.warn('proxy - config.url: ', config.url);
+        
         if (config.url.indexOf("http") < 0) {
+            console.warn('NOT USING PROXY');
             req.open(config.method, config.url, true);
             // Set the Authorization header for local calls
             req.setRequestHeader("Authorization", 'Bearer {!$Api.Session_ID}');
             
         } else {
+            console.warn('USING PROXY');
             // Use the proxy
             req.open(config.method, UserContext.siteUrlPrefix + "/services/proxy", true);
             

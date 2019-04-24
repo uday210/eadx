@@ -58,11 +58,12 @@
                 self.listDatasets(component, function(err, datasets) {
                     self.addAssetItems(component, 'datasets', datasets);
                 
-                    self.listDataflows(component, function(err, dataflows) {
-                        console.warn('listDataflows returned: ', dataflows);
-                        self.addAssetItems(component, 'dataflows', dataflows);
+                    //self.listDataflows(component, function(err, dataflows) {
+                    //    console.warn('listDataflows returned: ', dataflows);
+                     //   self.addAssetItems(component, 'dataflows', dataflows);
                     
                         self.listFolders(component, function(err, folders) {
+                            console.warn('listFolders returned: ', folders);
                             self.addAssetItems(component, 'folders', folders);
                                                         
                             self.listFolders(component, function(err, folders) {
@@ -77,7 +78,7 @@
                                 });
                             });
                         });
-                    });
+                    //});
                 });
             });
         });
@@ -180,6 +181,7 @@
         
         if (parent !== null) {
             assets.forEach(function(asset) {
+                console.warn('asset: ', asset);
                 name = asset.namespace ? asset.namespace + '__' + asset.name : asset.name;
                 var assetItem = { 
                     label: asset.label,
@@ -206,6 +208,8 @@
         itemMaps[nodeLabel] = assetMap;
         
         component.set('v.itemMaps', itemMaps);
+        
+        console.warn('setting v.items: ', items);
         
         component.set('v.items', items);
         

@@ -1,8 +1,8 @@
 global with sharing class QuipUtils {
-   static String accessToken = 'ZE5CQU1BbUR0SUQ=|1563335003|9YNQ7PPwGi0NT7hwp9DobpYdd2ET4QUxZG4hpE61kGY=';
+   static String accessToken = 'XXXXXXXXXXXXXX';
 
     global static String getURL(String url) {
-        //System.debug('getURL: ' + url);
+        System.debug('getURL: ' + url);
         
         HttpRequest request = new HttpRequest();        
         Http http = new Http();
@@ -21,9 +21,9 @@ global with sharing class QuipUtils {
     }
         
     global static String getList(String type, List<String> ids) {
-        //System.debug('getList');
-        //System.debug('type: ' + type);
-        //System.debug('ids: ' + ids);
+        System.debug('getList');
+        System.debug('type: ' + type);
+        System.debug('ids: ' + ids);
         
         String url = 'https://platform.quip.com/1/' + type;
         

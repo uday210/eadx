@@ -2,7 +2,7 @@ global class ListQuipFoldersProcessor
 extends ActionProcessor {
 
 /*
-    static String accessToken = 'ZE5CQU1BbUR0SUQ=|1563335003|9YNQ7PPwGi0NT7hwp9DobpYdd2ET4QUxZG4hpE61kGY=';
+    static String accessToken = 'XXXXXXXXXXXXXX';
 
     global static String getURL(String url) {
         System.debug('getURL: ' + url);

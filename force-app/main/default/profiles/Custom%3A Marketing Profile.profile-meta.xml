@@ -2060,6 +2060,10 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>customaction</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>dashaccess</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
