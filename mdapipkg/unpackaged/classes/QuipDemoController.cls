@@ -1,7 +1,7 @@
 @RestResource(urlMapping='/quip/*') 
 global with sharing class QuipDemoController {
 
-    static String accessToken = 'ZE5CQU1BbUR0SUQ=|1563335003|9YNQ7PPwGi0NT7hwp9DobpYdd2ET4QUxZG4hpE61kGY=';
+    static String accessToken = 'XXXXXXXXXXXXXXXXXXX';
 
     @AuraEnabled
     global static String getURL(String url) {
